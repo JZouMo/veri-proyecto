@@ -1,0 +1,154 @@
+
+                                   VC Static 
+
+               Version U-2023.03-SP2 for linux64 - Aug 26, 2023 
+
+                    Copyright (c) 2010 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+restore_session -level default
+MasterSourceFile /mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/cpu_vc_formal.tcl
+# CPU equivalence expressed as two FPV comparison assertions.
+set_app_var fml_mode_on true
+set_fml_appmode FPV
+# Resolve sources from this script, independent of the run directory.
+set src_dir [file dirname [file normalize [info script]]]
+set sources [list \
+    [file join $src_dir alu.sv] \
+    [file join $src_dir cpu.sv] \
+    [file join $src_dir cpu_behavioral.sv] \
+    [file join $src_dir cpu_tb_top.sv]]
+read_file -sva -format sverilog -top cpu_tb_top -vcs $sources
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+
+Warning-[SM_NYI_WARN] Construct not yet implemented
+/mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/cpu.sv, 207
+  Associative array type object 'mem' is not supported by the tool
+
+Warning-[SM_UST] Unsupported System Task
+/mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/cpu_tb_top.sv, 46
+  Unsupported system task '$error' will be ignored for synthesis
+
+Warning-[SM_UST] Unsupported System Task
+/mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/cpu_tb_top.sv, 49
+  Unsupported system task '$error' will be ignored for synthesis
+
+Warning-[SM_NYI_WARN] Construct not yet implemented
+/mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/cpu.sv, 207
+  Associative array type object 'mem' is not supported by the tool
+
+Warning-[SM_MLAC] Modelling latched logic for always_comb
+/mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/cpu.sv, 301
+  Modelling latched logic for always_comb for signal 'Jump'.
+
+=======================================================
+VCS CPU Time(s)     :0.63
+SIMON CPU Time(s)   :0.70
+SIMON Total Time(s) :0.19
+Peak Memory(MB)     :395
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[Info] DB_COPT045: Vcs analyzer task has finished.
+[Info] PROP_I_COLLECT: Collecting Source Properties from the view:cpu_tb_top.
+# Gate Counts 
+Number of Flat Instances = 6339
+Number of Operator = 6339
+Number of Libcells = 0
+Number of Black-Box Instances = 0
+
+create_clock -period 10 clk
+create_reset -sense high rst
+# Guide addition: explicitly establish and save the reset state.
+sim_run -stable
+[Warning] CLOCK_W_UNIT_ADJUST: The clock unit for formal check is 10X zoomed in to avoid period round-off such that the relative frequency of the clock remains the same
+	Users can adjust the time unit in Verdi display to retrive the original periods
+[Info] SIM_I_CREATE: Create Simulation Model.
+sim_save_reset
+check_fv
+[Info] FORMAL_I_CREATE: Create Formal Model:cpu_tb_top.
+[Info] FORMAL_I_RUN: Starting formal verification for check_fv
+	  Id: 0  Goals: 4  Constraints: 1  Block Mode: false
+[Info] LIC_UNUSED_WORKERS: 8 unused worker(s) based 1 licenses needed to support 4 workers requested.
+	Use 'set_grid_usage' to maximize worker usage and improve performance, if there are sufficient compute resources to support more workers.
+	Each runtime license supports 12 workers.
+[Info] LIC_RT_CHECKOUT: VC Formal run time license checkout. Base:1  FPV:1.
+[Warning] LEARNED_DATA_NOT_FOUND: No existing learned data found in 'cpu_tb_top_learn_dir'
+report_fv
+
+  Summary Results
+   Property Summary: FPV
+   -----------------
+   > Assertion
+     - # found        : 2
+     - # not_run      : 2
+
+   > Vacuity
+     - # found        : 2
+     - # not_run      : 2
+
+   > Constraint
+     - # found        : 2
+
+
+action aaVerdiRestoreClipboard -trigger
+[Info] BITLEVEL_MODEL_STATS: Generated model with 15024 gates, 155 inputs, 1159 registers, 0 initial constraints, 1 constraints.
+report_fv
+
+  Summary Results
+   Property Summary: FPV
+   -----------------
+   > Assertion
+     - # found        : 2
+     - # falsified    : 2
+
+   > Vacuity
+     - # found        : 2
+     - # non_vacuous  : 2
+
+   > Constraint
+     - # found        : 2
+
+#verdi_cmd srcShowDefine -incrSearch {cpu_tb_top.assert_output_match};
+#check_fv -property {cpu_tb_top.assert_output_match}
+check_fv -property {cpu_tb_top.assert_output_match}
+[Info] FML_PROP_ENABLE_COUNTS: Properties selected with the -property switch: #Assert:1 #Cover:0 #Assume:0.
+	Proof constraints are unchanged; selecting assumptions targets their vacuity and witness goals.
+[Error] NO_PROPERTIES_FOUND_FV: No properties have been identified for verification.
+	Possible reasons are: 
+	1. All existing properties have already been run and converged.
+	2. Formal checks were not enabled: 
+		For source properties, the option '-sva' needs to be provided.
+view_trace -property {cpu_tb_top.assert_output_match}
+[Info] VIEW_TRACE_START: Starting Verdi Debug, Preparing Trace, Please Wait... 
+view_trace -property {cpu_tb_top.assert_pc_match}
+[Info] VIEW_TRACE_START: Starting Verdi Debug, Preparing Trace, Please Wait... 
+#verdi_cmd srcShowDefine -incrSearch {cpu_tb_top.assert_output_match};
+view_trace -property {cpu_tb_top.assert_output_match}
+[Info] VIEW_TRACE_START: Starting Verdi Debug, Preparing Trace, Please Wait... 
+=======================================================
+Total Time(S)  :634.87
+CPU Time(S)    :15.97
+Peak Memory(MB):1720
+========================Formal=========================
+Engine Wall Time(S)    :18.58
+Engine Peak Memory(MB) :128
+=======================================================

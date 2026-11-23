@@ -1,0 +1,231 @@
+
+
+                                   Verdi (R)
+
+               Version U-2023.03-SP2 for linux64 - Aug 20, 2023 
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+rcfile = /mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/runs/professor_original_01/novas.rc
+guiConfFile (read)= /mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/runs/professor_original_01/novas.conf (working directory)
+guiConfFile (write)= /mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/runs/professor_original_01/novas.conf (working directory)
+*WARN* Verdi-Elite (Verdi) license is not available. Try to check out Verdi-Apex (Verdi-Ultra) license.
+catch signal 11 (Segmentation fault)
+---------------
+Thread 20 (Thread 0x7f9f13d36700 (LWP 2768890)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 19 (Thread 0x7f9f14337700 (LWP 2768889)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 18 (Thread 0x7f9f14938700 (LWP 2768888)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 17 (Thread 0x7f9f14f39700 (LWP 2768887)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 16 (Thread 0x7f9f1553a700 (LWP 2768886)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 15 (Thread 0x7f9f15b3b700 (LWP 2768885)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 14 (Thread 0x7f9f13535700 (LWP 2768884)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 13 (Thread 0x7f9f12f34700 (LWP 2768883)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 12 (Thread 0x7f9f12933700 (LWP 2768882)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 11 (Thread 0x7f9f12332700 (LWP 2768881)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 10 (Thread 0x7f9f11d31700 (LWP 2768880)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 9 (Thread 0x7f9f11730700 (LWP 2768879)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x000000000b684404 in ffrSynchronizer::CondWait(int) ()
+#2  0x000000000b7c3c1f in ffrObject::LoadThread(void*) ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 8 (Thread 0x7f9f16740700 (LWP 2768100)):
+#0  0x00007f9f259072ef in select () at /lib64/libc.so.6
+#1  0x00007f9f2b1bf133 in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#2  0x00007f9f2b1c1ffc in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#3  0x00007f9f2b1c2b22 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#4  0x00007f9f2b197e2f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#5  0x00007f9f2b1980c8 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#6  0x00007f9f2b0b9e33 in QThread::exec() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#7  0x00007f9f2b17de3f in QInotifyFileSystemWatcherEngine::run() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#8  0x00007f9f2b0bc661 in QThreadPrivate::start(void*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#9  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#10 0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#11 0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 7 (Thread 0x7f9f16f41700 (LWP 2768099)):
+#0  0x00007f9f2ca4d371 in pthread_cond_wait@@GLIBC_2.3.2 () at /lib64/libpthread.so.0
+#1  0x00007f9f2b0bcb7b in QWaitCondition::wait(QMutex*, unsigned long) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#2  0x00007f9f2bb1d6ce in QFileInfoGatherer::run() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#3  0x00007f9f2b0bc661 in QThreadPrivate::start(void*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#4  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#5  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#6  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 6 (Thread 0x7f9f17742700 (LWP 2767987)):
+#0  0x00007f9f259072ef in select () at /lib64/libc.so.6
+#1  0x00007f9f2b17c5b1 in QProcessManager::run() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#2  0x00007f9f2b0bc661 in QThreadPrivate::start(void*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 5 (Thread 0x7f9f18744700 (LWP 2767985)):
+#0  0x00007f9f259072ef in select () at /lib64/libc.so.6
+#1  0x00007f9f2b1bf133 in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#2  0x00007f9f2b1c1ffc in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#3  0x00007f9f2b1c2b22 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#4  0x00007f9f2b197e2f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#5  0x00007f9f2b1980c8 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#6  0x00007f9f2b0b9e33 in QThread::exec() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#7  0x00007f9f1a6891e2 in UNode::MonetFvConDataModelWorkerThread::run() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/linux64/vcst/lib/libMonetGUI.so
+#8  0x00007f9f2b0bc661 in QThreadPrivate::start(void*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#9  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#10 0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#11 0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 4 (Thread 0x7f9f191d0700 (LWP 2767984)):
+#0  0x00007f9f259072ef in select () at /lib64/libc.so.6
+#1  0x00007f9f2b1bf133 in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#2  0x00007f9f2b1c1ffc in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#3  0x00007f9f2b1c2b22 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#4  0x00007f9f2b197e2f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#5  0x00007f9f2b1980c8 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#6  0x00007f9f2b0b9e33 in QThread::exec() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#7  0x00007f9f1a58d9e0 in UNode::MonetDataModelWorkerThread::run() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/linux64/vcst/lib/libMonetGUI.so
+#8  0x00007f9f2b0bc661 in QThreadPrivate::start(void*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#9  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#10 0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#11 0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 3 (Thread 0x7f9f1c756700 (LWP 2767950)):
+#0  0x00007f9f259072ef in select () at /lib64/libc.so.6
+#1  0x000000000bb6744a in NotifierThreadProc ()
+#2  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#3  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#4  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 2 (Thread 0x7f9f23767700 (LWP 2767742)):
+#0  0x00007f9f258da178 in nanosleep () at /lib64/libc.so.6
+#1  0x00007f9f258da07e in sleep () at /lib64/libc.so.6
+#2  0x0000000008f9a8f9 in LicenseCheckUtility ()
+#3  0x000000000bbc77bf in sdp_wrap_start_routine ()
+#4  0x00007f9f2ca471ca in start_thread () at /lib64/libpthread.so.0
+#5  0x00007f9f2580b8d3 in clone () at /lib64/libc.so.6
+Thread 1 (Thread 0x7f9f2eb78c80 (LWP 2767632)):
+#0  0x00007f9f25905afe in __waitpid_nocancel () at /lib64/libc.so.6
+#1  0x00007f9f25859595 in _IO_proc_close@@GLIBC_2.2.5 () at /lib64/libc.so.6
+#2  0x00007f9f25863dbc in __GI__IO_file_close_it () at /lib64/libc.so.6
+#3  0x00007f9f2585798f in fclose@@GLIBC_2.2.5 () at /lib64/libc.so.6
+#4  0x000000000bc9e8e9 in _sys_pclose ()
+#5  0x000000000bc3e9d7 in system ()
+#6  0x000000000bc2c84b in sysiCrash ()
+#7  0x000000000bc2cd58 in actUnexpectAction ()
+#8  0x000000000bc2cdc2 in catchSignalCB ()
+#9  0x000000000ac29c30 in _anrep_handler_signal ()
+#10 0x00007f9f258205b0 in <signal handler called> () at /lib64/libc.so.6
+#11 0x00000000063dc242 in localformat_C::update_localformat_menu(dbLeafNode_C*, int, _wtWindowRec*, CWaveLBItem*) ()
+#12 0x0000000005e9ab5f in set_currentnode_display_format(twMainWindow_C*, daDisplayFormat_E) ()
+#13 0x0000000005e9ac0f in digitalFHexUI(_wtWindowRec*, int, char**, void*) ()
+#14 0x000000000b8f92b4 in cmdiMapFunc ()
+#15 0x000000000b8f9340 in cmdMapFunc ()
+#16 0x0000000008b1a4d3 in qBaseWindow_V::dispatchFuncUI(char*, int, char**, void*) ()
+#17 0x0000000008b19cb9 in qBaseWindow_V::_invokeUI() ()
+#18 0x0000000008b34b7d in qBaseWindow_V::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) ()
+#19 0x00007f9f2b1ac01b in QMetaObject::activate(QObject*, QMetaObject const*, int, void**) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#20 0x00007f9f2b6caa82 in QAction::triggered(bool) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#21 0x00007f9f2b6cac60 in QAction::activate(QAction::ActionEvent) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#22 0x00007f9f2ba7becd in QMenuPrivate::activateCausedStack(QList<QPointer<QWidget> > const&, QAction*, QAction::ActionEvent, bool) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#23 0x00007f9f2ba81931 in QMenuPrivate::activateAction(QAction*, QAction::ActionEvent, bool) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#24 0x00007f9f2b716c38 in QWidget::event(QEvent*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#25 0x00007f9f2ba82aab in QMenu::event(QEvent*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#26 0x00007f9f2b6cf9fc in QApplicationPrivate::notify_helper(QObject*, QEvent*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#27 0x00007f9f2b6d38d5 in QApplication::notify(QObject*, QEvent*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#28 0x0000000008dadb7f in QwApplication::notify(QObject*, QEvent*) ()
+#29 0x00007f9f2b198f7e in QCoreApplication::notifyInternal(QObject*, QEvent*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#30 0x00007f9f2b6d0793 in QApplicationPrivate::sendMouseEvent(QWidget*, QMouseEvent*, QWidget*, QWidget*, QWidget**, QPointer<QWidget>&, bool) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#31 0x00007f9f2b73b1a2 in QETWidget::translateMouseEvent(_XEvent const*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#32 0x00007f9f2b73a09d in QApplication::x11ProcessEvent(_XEvent*) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtGui.so.4
+#33 0x0000000008dcb548 in qmotif_event_dispatcher(_XEvent*) ()
+#34 0x00007f9f26bcf491 in XtDispatchEvent () at /lib64/libXt.so.6
+#35 0x00007f9f26bdb510 in XtAppProcessEvent () at /lib64/libXt.so.6
+#36 0x0000000008dca835 in QtMotif::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) ()
+#37 0x00007f9f2b197e2f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#38 0x00007f9f2b1980c8 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#39 0x00007f9f2b19be3c in QCoreApplication::exec() () at /mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/verdi/platform/LINUXAMD64/lib/Qt/libQtCore.so.4
+#40 0x0000000008da28f5 in QwApplication::exec() ()
+#41 0x00000000032be708 in FUNC_DEBMAIN_LOOP() ()
+#42 0x00000000032c7800 in main ()
+---------------
+branchName=Verdi_U-2023.03-SP2 cnlDate=-- Sun Aug 20 03:34:16 PDT 2023 cnlEnv=Linux.0/64bit
+uname(Linux redhat003 4.18.0-553.74.1.el8_10.x86_64 #1 SMP Sun Sep 7 09:23:35 EDT 2025 x86_64)
+---------------
+Process Size: 1253470208 bytes
+verdi detected abnormal termination.
+Log information written to
+/mnt/vol_NFS_rh003/estudiantes/jzou/veri-proyecto/vcf_original/runs/professor_original_01/verdiLog/sysinfo_Nov23_1023.tar.
+Please send this file to customer support.
