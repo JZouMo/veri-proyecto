@@ -1,0 +1,10 @@
+/vcf/runs/
+/tools/vc_formal/work/
+/tools/vc_formal/vcst_rtdb*
+/tools/vc_formal/verdiLog/
+/tools/vc_formal/.simon.out/
+/tools/vc_formal/*_learn_dir/
+/tools/vc_formal/.certitudeGUI/
+*~
+*.swp
+*.swo
