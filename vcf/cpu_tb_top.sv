@@ -1,53 +1,57 @@
 module cpu_tb_top (
     input logic clk,
     input logic rst,
-    input logic [31:0] Instr,
-    input logic [4:0]  rd,
-    input logic [4:0]  rs1,
-    input logic [4:0]  rs2,
-    input logic [11:0] imm
+    input logic [31:0] Instr
 );
+    logic [31:0] result_impl, result_spec;
+    logic [31:0] pc_impl, pc_spec;
+    logic legal_instruction;
 
-    // ToDo: Fix the reset logic on the reference model, it's not working properly
-    // ToDo: Data memory needs to be external, since associative arrays are non-synthesizable
-
-    // Outputs from reference behavioral model
-    logic [31:0] out_spec;
-    logic [31:0] PC_spec;
-
-    // Outputs from implementation RTL
-    logic [31:0] out_impl;
-    logic [31:0] PC_impl;
-
-    // Instantiate Reference Model
-    cpu_behavioral u_spec (
-        .clk(clk), .rst(rst), .Instr(Instr), .Result(out_spec), .PC(PC_spec)
-    );                                                                       
-                                                                             
-    // Instantiate RTL Implementation
     cpu u_impl (
-        .clk(clk), .rst(rst), .Instr(Instr), .Result(out_impl), .PC(PC_impl)
+        .clk(clk), .rst(rst), .Instr(Instr),
+        .PC(pc_impl), .Result(result_impl)
     );
 
-    // Formal Assertions: Check that outputs match identically
-    always_ff @(posedge clk) begin
+    cpu_behavioral u_spec (
+        .clk(clk), .rst(rst), .Instr(Instr),
+        .PC(pc_spec), .Result(result_spec)
+    );
 
-        assume property (
-            (Instr == {7'b0000000,rs2,rs1,3'b000,rd,7'b0110011}) || // R-type ADD
-            (Instr == {7'b0100000,rs2,rs1,3'b000,rd,7'b0110011}) || // R-type SUB
-            (Instr == {7'b0000000,rs2,rs1,3'b111,rd,7'b0110011}) || // R-type AND
-            (Instr == {7'b0000000,rs2,rs1,3'b110,rd,7'b0110011}) || // R-type OR
-            (Instr == {7'b0000000,rs2,rs1,3'b010,rd,7'b0110011}) || // R-type SLT
-            (Instr == {imm,rs1,3'b000,rd,7'b0010011}) // I-type ADDI
-        );
+    // Six legal operation encodings; operands/immediates remain symbolic.
+    assign legal_instruction =
+        ((Instr[6:0] == 7'b0010011) &&
+         (Instr[14:12] == 3'b000)) || // ADDI
+        ((Instr[6:0] == 7'b0110011) &&
+         (((Instr[31:25] == 7'b0000000) &&
+           ((Instr[14:12] == 3'b000) || // ADD
+            (Instr[14:12] == 3'b111) || // AND
+            (Instr[14:12] == 3'b110) || // OR
+            (Instr[14:12] == 3'b010))) || // SLT
+          ((Instr[31:25] == 7'b0100000) &&
+           (Instr[14:12] == 3'b000)))); // SUB
 
-        if (!rst) begin
-            assert_output_match: assert property (out_impl == out_spec)
-                else $error("Mismatch: RTL out = %0h, Behavioral out = %0h", out_impl, out_spec);
-                
-            assert_pc_match: assert property (PC_impl == PC_spec)
-                else $error("Mismatch: RTL PC = %0b, Behavioral PC = %0b", PC_impl, PC_spec);
-        end
-    end
+    assume_legal_instruction: assume property (
+        @(posedge clk) disable iff (rst) legal_instruction
+    );
 
+    assert_result_match: assert property (
+        @(posedge clk) disable iff (rst)
+        result_impl == result_spec
+    );
+
+    assert_pc_match: assert property (
+        @(posedge clk) disable iff (rst)
+        pc_impl == pc_spec
+    );
+
+    // Guide additions: confirm that both instruction categories are reachable.
+    cover_rtype: cover property (
+        @(posedge clk) disable iff (rst)
+        legal_instruction && Instr[6:0] == 7'b0110011
+    );
+
+    cover_itype: cover property (
+        @(posedge clk) disable iff (rst)
+        legal_instruction && Instr[6:0] == 7'b0010011
+    );
 endmodule
